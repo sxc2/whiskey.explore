@@ -1,0 +1,15 @@
+.panel-square {
+    border-radius: 0px;
+    border: 2px solid #ddd;
+    box-shadow: none;
+}
+.panel-heading-pro {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.7em;
+}
+
+.panel-heading a {
+    text-decoration: none;
+    color:inherit;
+}

@@ -1,0 +1,84 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/** INDEX **/
+   .media
+    {
+        /*box-shadow:0px 0px 4px -2px #000;*/
+        margin: 20px 0;
+        border:10px solid #eee;
+        padding:30px;
+    }
+    .dp
+    {
+        padding: 5px;
+        transition: all 1s ease-in-out;
+    }
+    .dp:hover
+    {
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);  
+        -webkit-transform:rotate(360deg);  
+        /*-webkit-font-smoothing:antialiased;*/
+    }
+
+    .col-centered{
+        float: none;
+        margin: 0 auto;
+    }
+
+    .top-padded {
+      padding-top: 25px;
+    }
+
+    .xbox-green {
+      background-color: #9bc848;
+    }
+
+    .twitter-blue {
+      background-color: #4099FF;
+    }
+    
+    body, p, h1,h2,h3,h4,h5, a {
+      font-family: "Ubuntu", serif;
+    }
+
+    html { height: 100%; }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        height: 100%;
+    }
+
+    #canvas-wrap { position:relative;}
+    #canvas-wrap canvas { position:absolute; top:0; left:0; z-index:0 }
+    #overlay     { position:absolute;}

@@ -1,0 +1,77 @@
+<div class="login-box" ng-if="(loginState.name!='loginEmail')">
+    <div class="login-logo">
+        <a ui-sref="home.public" href=""><b>FishingWashington</b></a>
+    </div>
+    <div class="login-box-body" ng-if="loginState.loginState == 1">
+        <form novalidate class="css-form" name="loginForm" role="form">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control dovalidate ng-invalid" required placeholder="Username" ng-model="user.username" />
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control dovalidate ng-invalid" required placeholder="Password" ng-model="user.password" />
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" ng-disabled="!user.username" class="btn btn-primary btn-block btn-flat" ng-click="adminLogin(user)">Sign In</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="login-box-body" ng-if="loginState.loginState == 2">
+        <div class="register-box-body">
+            <p class="login-box-msg">Register a new membership</p>
+            <form novalidate class="css-form" name="loginForm" role="form">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control dovalidate ng-invalid" placeholder="First Name" id="firstName" ng-model="firstName" required/>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control dovalidate ng-invalid" placeholder="Email" id="email" ng-model="email" required/>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control dovalidate ng-invalid" placeholder="Password" id="password" ng-model="password" ng-minlength="6" ng-maxlength="10" ng-pattern="/^[a-zA-Z0-9]*$/" required/>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control dovalidate ng-invalid" placeholder="Retype password" id="cpassword" ng-model="cpassword" ng-minlength="6" ng-maxlength="10" ng-pattern="/^[a-zA-Z0-9]*$/" required/>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <label>
+                            <input type="checkbox" ng-model="toschecked"> I agree to the <a href="#">terms</a>
+                        </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" ng-disabled="!email || !password || (password != cpassword) || !toschecked" ng-click="createUser(firstName,lastName,email,password)">Register</button>
+                    </div>
+                </div>
+            </form>
+            <div class="social-auth-links text-center">
+                <p>- OR -</p>
+                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using Facebook</a>
+            </div>
+            <a ui-sref="login({loginState:1})" href="" class="text-center">I already have a membership</a>
+        </div>
+    </div>
+</div>
+<div class="login-box text-center" ng-if="(loginState.name=='loginEmail')" ng-init="initialize()">
+    <div ng-hide="!loginState.userQueried">
+        <div ng-if="loginState.userExists && loginState.userLoggedIn">
+            <h1>Hello {{loginState.aiName}}!</h1>
+            <h4>Welcome back <i class="fa fa-heart-o fa-fw"></i><br>
+        <small>Log in to see your trips.</small></h4>
+            <button ng-click="adminLogin(user)">Login</button>
+        </div>
+        <div ng-if="loginState.userExists && !loginState.userLoggedIn">
+            <h1>Hello {{loginState.aiName}}!</h1> 
+            <h4>You've been invited.<br> <small>Finish creating an account with us.</small></h4>
+            <button ng-click="adminLogin(user)">Onward</button>
+        </div>
+        <div ng-if="!loginState.userExists && !loginState.userLoggedIn">
+            <h1>Hello {{loginState.aiName}}!</h1> 
+            <h4>You're new.<br> <small>Create an account with us.</small></h4>
+            <button ng-click="signUp()">Create</button>
+        </div>
+    </div>
+    <div ng-hide="loginState.userQueried">
+        <h1><i class="fa fa-spinner fa-pulse"></i><br><small>Looking you up. Please wait. Danke.</small></h1>
+    </div>
+</div>

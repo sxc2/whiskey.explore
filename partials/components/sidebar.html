@@ -1,0 +1,63 @@
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <div class="user-panel">
+        <div class="pull-left image">
+            <img src="http://wineenthusiast.scene7.com/is/image/WineEnthusiast/f/n/w/465/26153_1.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+            <p>Whiskey Explorer</p>
+            <!-- <a href="#"><i class="fa fa-circle text-success"></i>
+            Sophia X Cui</a> -->
+        </div>
+    </div>
+    <ul class="sidebar-menu tree" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="treeview">
+            <a href="/" id="dashBoardId">
+                <i class='fa fa-dashboard fa-fw'></i>
+                <span>Why and How?</span>
+            </a>
+        </li>
+        <li class="header"></li>
+        <li class="treeview menu-open">
+          <a href="#">
+            <i class="fa fa fa-chart"></i> <span>Explore</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: block;">
+            <li class="{{url.current.indexOf('region.html')>0?'active':''}}"><a href="/region.html"><i class="fa fa-globe"></i> By Region</a></li>
+            <li class="{{url.current.indexOf('price.html')>0?'active':''}}"><a href="/price.html"><i class="fa fa-dollar"></i> By Price</a></li>
+            <li class="{{url.current.indexOf('flavor.html')>0?'active':''}}"><a href="/flavor.html"><i class="fa fa-apple"></i> By Flavor</a></li>
+          </ul>
+        </li>
+        <li class="header"></li>
+        <li class="treeview menu-open">
+          <a href="#">
+            <i class="fa fa fa-chart"></i> <span>Data Trends</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: block;">
+            <li><a href="/finding1.html"><i class="fa fa-globe"></i> Finding 1</a></li>
+            <li><a href="/finding2.html"><i class="fa fa-dollar"></i> Finding 2</a></li>
+          </ul>
+        </li>
+        <!-- <li class="treeview menu-open">
+          <a href="#">
+            <i class="fa fa fa-heart"></i> <span>Other</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: block;">
+            <li><a href="https://www.linkedin.com/in/sophia-cui/"><i class="fa fa-linkedin"></i> About Me</a></li>
+            <li><a href="https://github.com/sxc2"><i class="fa fa-github"></i> Github</a></li>
+          </ul>
+        </li> -->
+        <li class="header"></li>
+       
+    </ul>
+</section>

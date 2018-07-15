@@ -1,0 +1,159 @@
+<br>
+
+<a ng-click="page=page-1;" ng-show="page>1" class="btn btn-default">Back</a>
+<a ng-click="page=page+1;" class="btn btn-default">Forward</a> <small>Page: {{page}}</small>
+
+<div class="row" ng-init="page=1;" ng-show="page==1">
+    <div class="col-lg-12 col-sm-12 text-center">
+        <h2>Common Components <small>Page:{{page}}</small>
+		</h2>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <h3>Panels</h3>
+        <hr>
+
+        <div class="panel">Hello Plain Panel</div>
+        <div class="well">Hello Plain Well</div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Hello Panel Header
+            </div>
+            <div class="panel-body">
+                <p>Some text for the panel body</p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>Some text for the panel body</p>
+            </div>
+            <div class="panel-footer">
+                Footer
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <h3>Headings</h3>
+
+        <hr>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <hr>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <h3>Buttons</h3>
+
+        <hr>
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+
+                <button class="btn btn-default btn-xs">XS</button>
+                <br>
+                <button class="btn btn-default btn-sm">Small</button>
+                <br>
+                <button class="btn btn-default">Default</button>
+                <br>
+                <button class="btn btn-default btn-lg">Large</button>
+                <br>
+                <br>
+
+                <button class="btn btn-default btn-block">Block</button>
+                <button class="btn btn-default btn-block">Block2</button>
+
+            </div>
+            <div class="col-lg-4 col-sm-12">
+
+                <button class="btn btn-primary">Primary</button>
+                <br>
+                <button class="btn btn-success">Success</button>
+                <br>
+                <button class="btn btn-warning">Warning</button>
+                <br>
+                <button class="btn btn-danger">Error</button>
+                <br>
+                <button class="btn btn-info">Info</button>
+                <br>
+                <br>
+                <button class="btn btn-link">Link</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <h3>Inputs</h3>
+        <hr>
+
+        <input placeholder="Simple text input" type="text" />
+        <br>
+        <input placeholder="2" type="number" />
+        <br>
+        <input placeholder="2" type="date" />
+
+
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <h3>Extras</h3>
+
+        <hr>
+
+        <progress>
+            <bar value="50">
+            </bar>
+            <bar value="50" type="danger">
+            </bar>
+        </progress>
+    </div>
+</div>
+<div class="row" ng-init="page=1;" ng-show="page==2">
+    <link rel="stylesheet" href="css/panels.css" />
+    <div class="col-lg-12 col-sm-12 text-center">
+        <h2>Panel Designs <small>Page:{{page}}</small>
+		</h2>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+        <h3>Plain Panels</h3>
+        <hr>
+
+        <div class="panel">Hello Plain Panel</div>
+        <div class="panel panel-square">Hello Bolder Square Panel</div>
+
+        <div class="panel panel-square">
+            <div class="panel-heading panel-heading-pro">
+                Square Panel Header
+                <a href="#" class="pull-right" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear fa-fw fa-lg"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li> Option 1
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <p>Some text for the panel body</p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>Some text for the panel body</p>
+            </div>
+            <div class="panel-footer">
+                Footer
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+        <h3>Headings</h3>
+
+        <hr>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <hr>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+    </div>
+</div>

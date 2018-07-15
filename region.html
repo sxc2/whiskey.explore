@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" ng-app="personalApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey Explore</title>
+    <meta name="description" content="Sophia x cui">
+    <meta name="keywords" content="Sophia x cui sophi">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- Google fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/AdminLTE.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/skins/skin-blue.css">
+    <!-- My furball  -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+
+<body ng-controller="MyCtrl1" class="skin-black-light sidebar-mini {{style.collapsed?'sidebar-collapse':''}}" style="height: auto; min-height: 100%;">
+    <div class="wrapper" style="height: auto; min-height: 100%;">
+        <header class="main-header" ng-include src="'partials/components/header.html'"></header>
+        <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html'">
+        </aside>
+        <div class="view-container content-wrapper" style="min-height:1000px;" id="main-container" name="main-container">
+            <div ui-view class="view-frame">
+                <section class="content-header">
+                    <h1>By Region</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Explore By Region</li>
+                    </ol>
+                </section>
+                <section class="content">
+                    <div class="col-lg-12" style="display: none;">
+                        <svg width="1000" height="500"></svg>
+                    </div>
+                    <!-- 
+                    <div class="col-lg-8">
+                        <div class="box box-warning">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Whiskey World Map</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body no-padding">
+                                <div class="row">
+                                    <div class="col-md-9 col-sm-8">
+                                        <div class="pad">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4">
+                                        <div class="pad box-pane-right bg-yellow" style="min-height: 280px">
+                                            <div class="description-block margin-bottom">
+                                                <div class="sparkbar pad" data-color="#fff">
+                                                    <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                </div>
+                                                <h5 class="description-header">56</h5>
+                                                <span class="description-text">Whiskeys</span>
+                                            </div>
+                                            <div class="description-block margin-bottom">
+                                                <div class="sparkbar pad" data-color="#fff">
+                                                    <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                </div>
+                                                <h5 class="description-header">$55</h5>
+                                                <span class="description-text">Average Price</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="info-box bg-yellow">
+                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Something</span>
+                                <span class="info-box-number">Cool</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-description">
+                                 More information
+                                </span>
+                            </div>
+                        </div>
+                        <div class="info-box bg-red">
+                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Something</span>
+                                <span class="info-box-number">Cool 2</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-description">
+                                 More information
+                                </span>
+                            </div>
+                        </div>
+                    </div> -->
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <!-- <script src="js/boxy.js"></script> -->
+    <script>
+    var whiskey_data = [];
+
+    // this was borrowed from https://bl.ocks.org/mbostock/3885304 
+    // (i like his margin calculations and scaling setup)
+    var svg = d3.select("svg");
+    var margin = { top: 40, right: 20, bottom: 20, left: 20 };
+    var width = +svg.attr("width") - margin.left - margin.right - 20;
+    var height = +svg.attr("height") - margin.top - margin.bottom - 20;
+
+    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+    var y = d3.scaleLinear().rangeRound([height, 0]);
+
+    // d3.csv("https://s3-us-west-2.amazonaws.com/whisky.explore/files/whiskey_data.json", function(data) {
+    //     whiskey_data = data;
+
+
+    // });
+    </script>
+</body>
+
+</html>
