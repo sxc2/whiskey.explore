@@ -25,12 +25,12 @@
 <body ng-controller="MyCtrl1" class="skin-black-light sidebar-mini {{style.collapsed?'sidebar-collapse':''}}" style="height: auto; min-height: 100%;">
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <header class="main-header" ng-include src="'partials/components/header.html'"></header>
-        <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html'">
+        <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html?v=4'">
         </aside>
         <div class="view-container content-wrapper" style="min-height:1000px;" id="main-container" name="main-container">
             <div ui-view class="view-frame">
                 <section class="content-header">
-                    <h1>By Region</h1>
+                    <h1>Japanese Whisk(e)y</h1>
                     <ol class="breadcrumb">
                         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Explore By Region</li>
@@ -40,11 +40,11 @@
                     <div class="col-lg-12" style="display: none;">
                         <svg width="1000" height="500"></svg>
                     </div>
-                    <!-- 
+                    
                     <div class="col-lg-8">
                         <div class="box box-warning">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Whiskey World Map</h3>
+                                <h3 class="box-title">Japanese vs. Other</h3>
                                 <div class="box-tools pull-right">
                                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                     </button>
@@ -52,30 +52,7 @@
                                 </div>
                             </div>
                             <div class="box-body no-padding">
-                                <div class="row">
-                                    <div class="col-md-9 col-sm-8">
-                                        <div class="pad">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-4">
-                                        <div class="pad box-pane-right bg-yellow" style="min-height: 280px">
-                                            <div class="description-block margin-bottom">
-                                                <div class="sparkbar pad" data-color="#fff">
-                                                    <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
-                                                </div>
-                                                <h5 class="description-header">56</h5>
-                                                <span class="description-text">Whiskeys</span>
-                                            </div>
-                                            <div class="description-block margin-bottom">
-                                                <div class="sparkbar pad" data-color="#fff">
-                                                    <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
-                                                </div>
-                                                <h5 class="description-header">$55</h5>
-                                                <span class="description-text">Average Price</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <div class='tableauPlaceholder' id='viz1532574446126' style='position: relative'><noscript><a href='#'><img alt='Japan vs. Other ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Japanvs_Other&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='w209_final_project_nathan_v10_3&#47;Japanvs_Other' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Japanvs_Other&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1532574446126');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                             </div>
                         </div>
                     </div>
@@ -106,7 +83,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </section>
             </div>
         </div>

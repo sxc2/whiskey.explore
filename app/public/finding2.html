@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font awesome CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <!-- Custom CSS  -->
@@ -18,25 +18,143 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/AdminLTE.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/skins/skin-blue.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.css">
+    <link rel="stylesheet" href="css/vendor/slider.css">
     <!-- My furball  -->
     <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 
 <body ng-controller="MyCtrl1" class="skin-black-light sidebar-mini {{style.collapsed?'sidebar-collapse':''}}" style="height: auto; min-height: 100%;">
+    <style>
+    .radar-chart .area {
+        fill-opacity: 0.7;
+    }
+
+    .radar-chart.focus .area {
+        fill-opacity: 0.3;
+    }
+
+    .radar-chart.focus .area.focused {
+        fill-opacity: 0.9;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        /* Add a search icon to input */
+        background-position: 10px 12px;
+        /* Position the search icon */
+        background-repeat: no-repeat;
+        /* Do not repeat the icon image */
+        width: 100%;
+        /* Full-width */
+        font-size: 16px;
+        /* Increase font-size */
+        padding: 12px 20px 12px 40px;
+        /* Add some padding */
+        border: 1px solid #ddd;
+        /* Add a grey border */
+        margin-bottom: 12px;
+        /* Add some space below the input */
+    }
+
+    h4 {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    </style>
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <header class="main-header" ng-include src="'partials/components/header.html'"></header>
-        <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html'">
+        <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html?v=4'">
         </aside>
         <div class="view-container content-wrapper" style="min-height:1000px;" id="main-container" name="main-container">
             <div ui-view class="view-frame">
                 <section class="content-header">
-                    <h1>Finding 2</h1>
+                    <h1>Whiskey Flavors Deep Dive</h1>
                     <ol class="breadcrumb">
                         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Finding 2</li>
+                        <li class="active">Flavors</li>
                     </ol>
                 </section>
                 <section class="content">
+                    <div class="alert alert-warning alert-dismissible text-center">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i> This page takes a few seconds to load.
+                        </h4> 
+                    </div>
+                    <div class="box box-warning">
+                        <div class="box-header with-border" style="min-height: 100px;">
+                            <div class="col-lg-5">
+                                <h4 style="color:#3c8dbc;">Whiskey Ratings</h4>
+                                <div class="row">
+                                    <div class="col-lg-1"><small>1</small></div>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="ratingslider" id="ratingslider" data-provide="slider" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="[1, 100]" data-slider-tooltip="true" data-slider-id="blue">
+                                    </div>
+                                    <div class="col-lg-2"><small>100</small></div>
+                                </div>
+                                <h4 style="color:#00c0ef;">Whiskey Price</h4>
+                                <div class="row">
+                                    <div class="col-lg-1"><small>$1</small></div>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="priceslider" id="priceslider" data-provide="slider" data-slider-min="1" data-slider-max="800" data-slider-step="10" data-slider-value="[1, 800]" data-slider-tooltip="true" data-slider-id="aqua">
+                                    </div>
+                                    <div class="col-lg-2"><small>$800USD</small></div>
+                                </div>
+                                <h4 style="color:#00a65a;">Whiskey Regions</h4>
+                                <select multiple="" class="form-control" id="selectRegion">
+                                    <option>Australia</option>
+                                    <option>American</option>
+                                    <option>Blend</option>
+                                    <option>Bourbon</option>
+                                    <option>Campbeltown</option>
+                                    <option>Canada</option>
+                                    <option>Highland</option>
+                                    <option>India</option>
+                                    <option>Irish</option>
+                                    <option>Island</option>
+                                    <option>Islay</option>
+                                    <option>Japan</option>
+                                    <option>Lowland</option>
+                                    <option>Rye</option>
+                                    <option>Speyside</option>
+                                    <option>Sweden</option>
+                                    <option>Taiwan</option>
+                                    <option>Tennessee</option>
+                                    <option>Wheat</option>
+                                    >
+                                </select>
+                                <h4 style="color:#f39c12;">Whiskey Search</h4>
+                                <input type="text" id="myInput" onkeyup="searchWhiskey()" placeholder="Search for whiskeys by name..">
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="well">
+                                    Showing <strong><span id="total_count"> - </span> out of <span id="static_total_count"></strong></strong> (<span id="total_percent">100%</span>) total whiskey flavor profiles.
+                                    <br>
+                                    <br> Filtering by:
+                                    <ul>
+                                        <li style="color:#3c8dbc;">Ratings: <span id="show_ratings_range" style="font-weight:bold;"></span> </li>
+                                        <li style="color:#00c0ef;">Price: <span id="show_price_range" style="font-weight:bold;"></span></li>
+                                        <li style="color:#00a65a;">Regions: <span id="show_region_range" style="font-weight:bold;"></span></li>
+                                        <li style="color:#f39c12;">Search Term: "<span id="show_searched_range" style="font-weight:bold;"></span>" </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="well">
+                                    Selected Whiskey Properties, compared to the average:
+                                    <ul id="average_summaries">
+                                        <li style="color:#3c8dbc;">Average Rating: <span id="show_ratings_avg" style="font-weight:bold;"></span> </li>
+                                        <li style="color:#00c0ef;">Average Price: <span id="show_price_avg" style="font-weight:bold;"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-body no-padding" id="hello-spiders">
+                        </div>
+                    </div>
+                    <!-- <div class="chart-container"></div> -->
                     <div class="col-lg-12" style="display: none;">
                         <svg width="1000" height="500"></svg>
                     </div>
@@ -118,11 +236,169 @@
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/vendor/RadarChart.js?v=2"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-    <!-- <script src="js/boxy.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
     <script>
+    function searchWhiskey() {
+        searchTerm = $('#myInput').val().toLowerCase();
+        showOrHideWhiskeys();
+    }
+
+    function showOrHideWhiskeys() {
+        $(".spider-chart").each(function(index) {
+            var region = $(this).data('region');
+            var rating = parseFloat($(this).data('rating'));
+            var price = parseFloat($(this).data('price'));
+            var name = $(this).data('name').toLowerCase();
+
+            var showOrHide = true;
+
+            if (rating && (rating >= ratingchanged[0]) && (rating <= ratingchanged[1])) {} else {
+                showOrHide = showOrHide && false;
+            }
+
+            if (price && (price >= pricechanged[0]) && (price <= pricechanged[1])) {} else {
+                showOrHide = showOrHide && false;
+            }
+
+
+            var found = false;
+            for (var i = selected.length - 1; i >= 0; i--) {
+                if (region.indexOf(selected[i]) >= 0) {
+                    found = true;
+                }
+            }
+
+            if (found || (selected.length === 0)) {} else {
+                showOrHide = showOrHide && false;
+            }
+
+            if (!searchTerm.trim() || name.indexOf(searchTerm) >= 0) {} else {
+                showOrHide = showOrHide && false;
+            }
+
+            if (showOrHide === true) {
+                $(this).fadeIn();
+            } else {
+                $(this).hide();
+            }
+        });
+
+        updateMetadata();
+    }
+
+    function getDataFlavorTags(whiskey_data_element, sample_flavor_array) {
+        var str_flavor = "";
+        for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
+            var num = whiskey_data_element[sample_flavor_array[i]] ? whiskey_data_element[sample_flavor_array[i]] : 0;
+            str_flavor += ' data-' + sample_flavor_array[i] + '="' + num + '" ';
+        }
+
+        return str_flavor;
+    }
+
+    function updateMetadata() {
+
+        var totalCount = $(".spider-chart").filter(":visible").length;
+
+        $('#total_count').html(totalCount);
+        $('#total_percent').html(Math.round(totalCount / $(".spider-chart").length * 100) + "%");
+        $('#show_price_range').html("$" + pricechanged[0] + " to $" + pricechanged[1]);
+        $('#show_ratings_range').html(ratingchanged[0] + " to " + ratingchanged[1] + " points");
+        $('#show_region_range').html(regions);
+        $('#show_searched_range').html(searchTerm);
+
+
+        var averagePrice = 0;
+        var averageRating = 0;
+
+        var averageFlavors = [];
+
+        for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
+            averageFlavors[sample_flavor_array[i]] = 0;
+        }
+
+        $(".spider-chart").filter(":visible").each(function() {
+            averagePrice += parseFloat($(this).data('price'));
+            averageRating += parseFloat($(this).data('rating'));
+
+            for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
+                averageFlavors[sample_flavor_array[i]] += parseInt($(this).data(sample_flavor_array[i]));
+            }
+        });
+
+        var selected_average_ratings = Math.round(averageRating * 10 / totalCount) / 10;
+        var selected_average_price = Math.round(averagePrice * 10 / totalCount) / 10;
+
+        $('#show_ratings_avg').html(selected_average_ratings);
+        $('#show_price_avg').html('$' + selected_average_price);
+
+        showLiftOrKnock(
+            selected_average_ratings,
+            total_average_rating,
+            "show_ratings_avg",
+            selected_average_ratings + ", ");
+
+        showLiftOrKnock(
+            selected_average_price,
+            total_average_price,
+            "show_price_avg",
+            "$" + selected_average_price + ", ");
+
+        for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
+            var selected_average_flavor = Math.round(averageFlavors[sample_flavor_array[i]] * 10 / totalCount) / 10;
+            showLiftOrKnock(
+                selected_average_flavor,
+                total_average_flavors[sample_flavor_array[i]],
+                "show_" + sample_flavor_array[i] + "_avg",
+                selected_average_flavor + ", ");
+            // $("#show_" + sample_flavor_array[i] + "_avg").html();
+        }
+
+
+
+
+    }
+
+    function showLiftOrKnock(thisValue, allValues, idOfElement, strToAppend) {
+
+        var percentDiff = Math.round(thisValue / allValues * 100);
+
+
+        var color_change = "<strong style='color:" + color_table(percentDiff) +
+            "'><i  class='fa fa-arrow-up fa-fw'></i> +" + (percentDiff - 100) + "%</strong>";
+
+        if (percentDiff < 100) {
+            color_change = "<strong style='color:" + color_table_red(percentDiff) +
+                "'><i  class='fa fa-arrow-down fa-fw'></i> -" + (100 - percentDiff) + "%</strong>";
+        } else if (percentDiff == 100) {
+            color_change = "<strong style='color:#ccc'> 0%</strong>";
+        }
+
+        $("#" + idOfElement).html(strToAppend + color_change);
+    }
+
+    function getColorBasedOnValue(thisValue, allValues) {
+        var percentDiff = Math.round(thisValue / allValues * 100);
+
+        var color_change = color_table(percentDiff);
+
+        if (percentDiff < 100) {
+            color_change = color_table_red(percentDiff);
+        } else if (percentDiff == 100) {
+            color_change = "#aaa";
+        }
+
+        return color_change;
+
+    }
+
     var whiskey_data = [];
+    var whiskey_data_names = [];
+
 
     // this was borrowed from https://bl.ocks.org/mbostock/3885304 
     // (i like his margin calculations and scaling setup)
@@ -134,11 +410,288 @@
     var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
     var y = d3.scaleLinear().rangeRound([height, 0]);
 
-    // d3.csv("https://s3-us-west-2.amazonaws.com/whisky.explore/files/whiskey_data.json", function(data) {
-    //     whiskey_data = data;
+    var pricechanged = [0, 800];
+    var ratingchanged = [0, 100];
+    var searchTerm = "";
+
+    var totalCount = 500;
+    var regions = "all";
+    var selected = [];
+
+    var totalNodes;
+
+    var total_average_price = 0;
+    var total_average_rating = 0;
+
+    var total_average_flavors = [];
+    var sample_flavor_array = [];
+
+    var scale_table = d3.scaleLinear()
+        .domain([100, 200])
+        .range(["#ccc", '#0c0']);
+    var color_table = function(result) {
+        return scale_table(result);
+    };
+
+    var scale_table_red = d3.scaleLinear()
+        .domain([0, 100])
+        .range(["#c00", '#ccc']);
+    var color_table_red = function(result) {
+        return scale_table_red(result);
+    };
 
 
-    // });
+
+    d3.csv("https://s3-us-west-2.amazonaws.com/whisky.explore/files/whiskey-flavor-shorter.csv", function(data) {
+
+        var sample_data = [{
+                "area": "chocolate",
+                "value": 0
+            },
+            {
+                "area": "caramel",
+                "value": 0
+            },
+            {
+                "area": "vanilla",
+                "value": 0
+            },
+            {
+                "area": "toffee",
+                "value": 0
+            },
+            {
+                "area": "sweet",
+                "value": 0
+            },
+            {
+                "area": "honey",
+                "value": 0
+            },
+            {
+                "area": "floral",
+                "value": 0
+            },
+            {
+                "area": "fruity",
+                "value": 0
+            },
+            {
+                "area": "citrus",
+                "value": 0
+            },
+            {
+                "area": "orange",
+                "value": 0
+            },
+            {
+                "area": "sherry",
+                "value": 0
+            },
+            {
+                "area": "cinnamon",
+                "value": 0
+            },
+            {
+                "area": "wood",
+                "value": 0
+            },
+            {
+                "area": "oak",
+                "value": 0
+            },
+            {
+                "area": "rich",
+                "value": 0
+            },
+            {
+                "area": "spicy",
+                "value": 0
+            },
+            {
+                "area": "bitter",
+                "value": 0
+            }
+        ];
+
+        var width = 180,
+            height = 180;
+        // Config for the Radar chart
+        var config = {
+            w: width,
+            h: height,
+            maxValue: 10,
+            levels: 5,
+            ExtraWidthX: 300
+        }
+
+        for (var i = sample_data.length - 1; i >= 0; i--) {
+            sample_flavor_array.push(sample_data[i]['area']);
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            var newItem = [];
+            for (var key in sample_data) {
+                newItem[key] = [];
+                for (var twokey in sample_data[key]) {
+                    newItem[key][twokey] = sample_data[key][twokey];
+                }
+            }
+
+            var all_null = true;
+
+
+            for (var key in newItem) {
+                if (!newItem.hasOwnProperty(key)) continue;
+
+                var value = data[i][newItem[key]['area']];
+
+                if (value) {
+                    newItem[key]['value'] = Math.min(10, parseInt(value));
+
+                    all_null = false;
+                }
+
+            }
+
+            if (!data[i]['Bottle'] || !data[i]['Price'] || !data[i]['Rating'] || isNaN(parseFloat(data[i]['Price']))) {
+                all_null = true;
+            } else if (data[i]['Price'].trim() === "") {
+                all_null = true;
+            }
+
+
+            if (!all_null) {
+                whiskey_data.push(newItem);
+                whiskey_data_names.push(data[i]);
+            }
+        }
+
+
+        for (var i = 0; i < whiskey_data_names.length - 1; i++) {
+            // whiskey_data_names[i]
+
+            var data_flavor_tag = getDataFlavorTags(whiskey_data_names[i], sample_flavor_array);
+            var sanitized_Price = whiskey_data_names[i]['Price'] ? whiskey_data_names[i]['Price'] : 0;
+
+            // append a new node
+            $('#hello-spiders').append('<div id="spider_home_' + i + '" class="col-lg-3 spider-chart" data-region="' + whiskey_data_names[i]['Region'] + '" data-rating="' + whiskey_data_names[i]['Rating'] + '" data-price="' + whiskey_data_names[i]['Price'] + '" data-name="' + whiskey_data_names[i]['Bottle'].toLowerCase() + '" ' + data_flavor_tag + '></div>');
+
+
+
+            $("#spider_home_" + i).append('<h4 class="text-center">' + whiskey_data_names[i]['Bottle'] + '</h4><div class="whiskey_label text-center" id="spider_label_' + i + '"></div><div id="spider_' + i + '"></div>');
+
+            data_bit = [whiskey_data[i]];
+            RadarChart.draw("#spider_" + i, data_bit, config);
+        }
+
+        var svg = d3.select('body')
+            .selectAll('svg')
+            .append('svg')
+            .attr("width", width)
+            .attr("height", height);
+
+        $('#selectRegion').change(function() {
+            selected = $(this).val();
+            regions = selected + "";
+
+            if (selected.length >= 17) {
+                regions = "all";
+            }
+
+            showOrHideWhiskeys();
+        });
+
+        // $('#priceslider').slider().on('change', function(event) {
+        //     var a = event.value.newValue;
+        //     var b = event.value.oldValue;
+
+        //     pricechanged = !($.inArray(a[0], b) !== -1 &&
+        //         $.inArray(a[1], b) !== -1 &&
+        //         $.inArray(b[0], a) !== -1 &&
+        //         $.inArray(b[1], a) !== -1 &&
+        //         a.length === b.length);
+
+        // });
+
+
+        // $('#priceslider').slider().on('slideStart', function(ev){
+        //     originalPrice = $('#priceslider').data('slider').getValue();
+
+        // });
+
+        totalNodes = $(".spider-chart").length;
+        $('#static_total_count').html(totalNodes);
+
+        for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
+            total_average_flavors[sample_flavor_array[i]] = 0;
+        }
+
+        $(".spider-chart").each(function() {
+            total_average_price += parseFloat($(this).data('price'));
+            total_average_rating += parseFloat($(this).data('rating'));
+
+            for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
+                total_average_flavors[sample_flavor_array[i]] += parseInt($(this).data(sample_flavor_array[i]));
+            }
+        });
+
+        total_average_price = Math.round(total_average_price * 10 / totalNodes) / 10;
+        total_average_rating = Math.round(total_average_rating * 10 / totalNodes) / 10;
+
+        for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
+            total_average_flavors[sample_flavor_array[i]] =
+                Math.round(total_average_flavors[sample_flavor_array[i]] * 10 / totalNodes) / 10;
+            $('#average_summaries').append('<li style="color:#777;font-size:0.9em;">Average ' + sample_flavor_array[i] + ': <span id="show_' + sample_flavor_array[i] + '_avg" style="font-weight:bold;"></span> </li>');
+        }
+
+        $(".spider-chart").each(function() {
+            // $('#hello-spiders').append('<div id="spider_home_' + i + '" class="col-lg-3 spider-chart" data-region="' + whiskey_data_names[i]['Region'] + '" data-rating="' + whiskey_data_names[i]['Rating'] + '" data-price="' + whiskey_data_names[i]['Price'] + '" data-name="' + whiskey_data_names[i]['Bottle'].toLowerCase() + '" ' + data_flavor_tag + '></div>');
+
+
+            var label = "<small>Rating:</small> <span style='color:#3c8dbc;padding-right:10px;'> " + Math.round($(this).data('rating')) +
+                "</span>   <small>Price:</small> <span style='color:#00c0ef;padding-right:10px;'> $" + Math.round($(this).data('price')) + " </span>" +
+                "</span>   <small>Region:</small> <span style='color:#00a65a;padding-right:10px;'> " + $(this).data('region') + " </span>";
+
+
+            $(this).find('.whiskey_label').append(label);
+
+        });
+
+        $('#priceslider').slider().on('slideStop', function(event) {
+            var pricechangedNew = $('#priceslider').data('slider').getValue();
+
+            if (pricechangedNew != pricechanged) {
+
+                pricechanged = pricechangedNew;
+
+                showOrHideWhiskeys();
+
+            }
+        });
+
+        $('#ratingslider').slider().on('slideStop', function(event) {
+            ratingchangedNew = $('#ratingslider').data('slider').getValue();
+
+            if (ratingchangedNew != ratingchanged) {
+
+                ratingchanged = ratingchangedNew;
+
+                showOrHideWhiskeys();
+
+            }
+        });
+
+        $('.alert-warning').fadeOut();
+
+        updateMetadata();
+
+
+
+        // ratingslider
+        // priceslider
+        //   var originalRating;
+    });
     </script>
 </body>
 

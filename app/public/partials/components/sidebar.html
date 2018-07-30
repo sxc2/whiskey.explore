@@ -27,9 +27,10 @@
             </span>
           </a>
           <ul class="treeview-menu" style="display: block;">
-            <li class="{{url.current.indexOf('region.html')>0?'active':''}}"><a href="/region.html"><i class="fa fa-globe"></i> By Region</a></li>
-            <li class="{{url.current.indexOf('price.html')>0?'active':''}}"><a href="/price.html"><i class="fa fa-dollar"></i> By Price</a></li>
-            <li class="{{url.current.indexOf('flavor.html')>0?'active':''}}"><a href="/flavor.html"><i class="fa fa-apple"></i> By Flavor</a></li>
+            <li class="{{url.current.indexOf('region.html')>0?'active':''}}"><a href="/region.html?v=3"><i class="fa fa-globe"></i> By Region</a></li>
+            <!-- <li class="{{url.current.indexOf('rating.html')>0?'active':''}}"><a href="/rating.html"><i class="fa fa-globe"></i> By Rating</a></li> -->
+            <li class="{{url.current.indexOf('price.html')>0?'active':''}}"><a href="/price.html?v=3"><i class="fa fa-dollar"></i> By Price</a></li>
+            <li class="{{url.current.indexOf('flavor.html')>0?'active':''}}"><a href="/flavor.html?v=3"><i class="fa fa-apple"></i> By Flavor</a></li>
           </ul>
         </li>
         <li class="header"></li>
@@ -41,8 +42,8 @@
             </span>
           </a>
           <ul class="treeview-menu" style="display: block;">
-            <li><a href="/finding1.html"><i class="fa fa-globe"></i> Finding 1</a></li>
-            <li><a href="/finding2.html"><i class="fa fa-dollar"></i> Finding 2</a></li>
+            <li class="{{url.current.indexOf('finding2.html')>0?'active':''}}"><a href="/finding2.html?v=3"><i class="fa fa-apple"></i> Whiskey Flavor Deep Dive</a></li>
+            <li class="{{url.current.indexOf('finding1.html')>0?'active':''}}"><a href="/finding1.html?v=3"><i class="fa fa-globe"></i> Japanese Whisk(e)y</a></li>
           </ul>
         </li>
         <!-- <li class="treeview menu-open">
