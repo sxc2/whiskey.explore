@@ -81,10 +81,27 @@
                     <div class="alert alert-warning alert-dismissible text-center">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                         <h4><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i> This page takes a few seconds to load.
-                        </h4> 
+                        </h4>
                     </div>
                     <div class="box box-warning">
                         <div class="box-header with-border" style="min-height: 100px;">
+                            <div class="col-lg-12">
+                                <h2>
+                                    <span class="label label-advanced">Advanced</span>
+                                    <span class="label label-region">Region</span>
+                                    <span class="label label-flavor">Flavors</span>
+                                    <span class="label label-ratings">Ratings</span>
+                                    <span class="label label-price">Price</span>
+                                    <span class="label label-individual">Individual Expressions</span>
+                                    <span class="label label-warning">Aggregated</span>
+                                </h2>
+                                
+                                <p>
+                                    This dynamic serial visualization shows the flavor profiles of more than 400 different expressions of whiskey by flavor notes.
+                                    <br> Explore flavor note differences by region, price and rating. Also try searching on the distillers you like the most to discover more expressions that suit your taste buds.
+                                </p>
+                                <hr>
+                            </div>
                             <div class="col-lg-5">
                                 <h4 style="color:#3c8dbc;">Whiskey Ratings</h4>
                                 <div class="row">
@@ -130,7 +147,7 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="well">
-                                    Showing <strong><span id="total_count"> - </span> out of <span id="static_total_count"></strong></strong> (<span id="total_percent">100%</span>) total whiskey flavor profiles.
+                                    Showing <strong><span class="total_count"> - </span> out of <span id="static_total_count"></strong></strong> (<span id="total_percent">100%</span>) total whiskey flavor profiles.
                                     <br>
                                     <br> Filtering by:
                                     <ul>
@@ -143,10 +160,10 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="well">
-                                    Selected Whiskey Properties, compared to the average:
+                                    Selected Whiskey Properties (<span class="total_count"> all </span>):
                                     <ul id="average_summaries">
-                                        <li style="color:#3c8dbc;">Average Rating: <span id="show_ratings_avg" style="font-weight:bold;"></span> </li>
-                                        <li style="color:#00c0ef;">Average Price: <span id="show_price_avg" style="font-weight:bold;"></span></li>
+                                        <li style="color:#3c8dbc;">Rating: <span id="show_ratings_avg" style="font-weight:bold;"></span> </li>
+                                        <li style="color:#00c0ef;">Price: <span id="show_price_avg" style="font-weight:bold;"></span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -304,7 +321,7 @@
 
         var totalCount = $(".spider-chart").filter(":visible").length;
 
-        $('#total_count').html(totalCount);
+        $('.total_count').html(totalCount);
         $('#total_percent').html(Math.round(totalCount / $(".spider-chart").length * 100) + "%");
         $('#show_price_range').html("$" + pricechanged[0] + " to $" + pricechanged[1]);
         $('#show_ratings_range').html(ratingchanged[0] + " to " + ratingchanged[1] + " points");
@@ -340,12 +357,14 @@
             selected_average_ratings,
             total_average_rating,
             "show_ratings_avg",
+            // "");
             selected_average_ratings + ", ");
 
         showLiftOrKnock(
             selected_average_price,
             total_average_price,
             "show_price_avg",
+            // "");
             "$" + selected_average_price + ", ");
 
         for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
@@ -353,8 +372,8 @@
             showLiftOrKnock(
                 selected_average_flavor,
                 total_average_flavors[sample_flavor_array[i]],
-                "show_" + sample_flavor_array[i] + "_avg",
-                selected_average_flavor + ", ");
+                "show_" + sample_flavor_array[i] + "_avg", "");
+            // selected_average_flavor + ", ");
             // $("#show_" + sample_flavor_array[i] + "_avg").html();
         }
 
@@ -369,13 +388,13 @@
 
 
         var color_change = "<strong style='color:" + color_table(percentDiff) +
-            "'><i  class='fa fa-arrow-up fa-fw'></i> +" + (percentDiff - 100) + "%</strong>";
+            "'><i  class='fa fa-arrow-up fa-fw'></i> +" + Math.round((thisValue - allValues) * 10) / 10 + "</strong>";
 
         if (percentDiff < 100) {
             color_change = "<strong style='color:" + color_table_red(percentDiff) +
-                "'><i  class='fa fa-arrow-down fa-fw'></i> -" + (100 - percentDiff) + "%</strong>";
+                "'><i  class='fa fa-arrow-down fa-fw'></i> -" + Math.round((allValues - thisValue) * 10) / 10 + "</strong>";
         } else if (percentDiff == 100) {
-            color_change = "<strong style='color:#ccc'> 0%</strong>";
+            color_change = "<strong style='color:#ccc'> -</strong>";
         }
 
         $("#" + idOfElement).html(strToAppend + color_change);
@@ -642,7 +661,7 @@
         for (var i = sample_flavor_array.length - 1; i >= 0; i--) {
             total_average_flavors[sample_flavor_array[i]] =
                 Math.round(total_average_flavors[sample_flavor_array[i]] * 10 / totalNodes) / 10;
-            $('#average_summaries').append('<li style="color:#777;font-size:0.9em;">Average ' + sample_flavor_array[i] + ': <span id="show_' + sample_flavor_array[i] + '_avg" style="font-weight:bold;"></span> </li>');
+            $('#average_summaries').append('<li style="color:#777;font-size:0.9em; text-transform:capitalize;">' + sample_flavor_array[i] + ' Notes: <span id="show_' + sample_flavor_array[i] + '_avg" style="font-weight:bold;"></span> </li>');
         }
 
         $(".spider-chart").each(function() {
