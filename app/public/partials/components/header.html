@@ -1,3 +1,364 @@
+<style>
+/* app css stylesheet */
+
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu>li {
+    display: inline;
+}
+
+.menu>li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.menu>li:nth-child(1):before {
+    content: "";
+    padding: 0;
+}
+
+
+
+
+
+
+
+/** INDEX **/
+
+.media {
+    /*box-shadow:0px 0px 4px -2px #000;*/
+    margin: 20px 0;
+    border: 10px solid #eee;
+    padding: 30px;
+}
+
+.dp {
+    padding: 5px;
+    transition: all 1s ease-in-out;
+}
+
+.dp:hover {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    /*-webkit-font-smoothing:antialiased;*/
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.top-padded {
+    padding-top: 25px;
+}
+
+.xbox-green {
+    background-color: #9bc848;
+}
+
+.twitter-blue {
+    background-color: #4099FF;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+    font-family: "Ubuntu", serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    height: 100%;
+}
+
+#canvas-wrap {
+    position: relative;
+}
+
+#canvas-wrap canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0
+}
+
+#overlay {
+    position: absolute;
+}
+
+.names {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+}
+
+
+
+
+
+
+/* Tooltip CSS */
+
+.d3-tip {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "avenir next", Arial, sans-serif;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFA500;
+    border-radius: 1px;
+    pointer-events: none;
+}
+
+
+
+
+
+
+/* Creates a small triangle extender for the tooltip */
+
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 8px;
+    width: 100%;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    pointer-events: none;
+}
+
+
+
+
+
+
+/* Northward tooltips */
+
+.d3-tip.n:after {
+    content: "\25BC";
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
+}
+
+
+
+
+
+
+/* Eastward tooltips */
+
+.d3-tip.e:after {
+    content: "\25C0";
+    margin: -4px 0 0 0;
+    top: 50%;
+    left: -8px;
+}
+
+
+
+
+
+
+/* Southward tooltips */
+
+.d3-tip.s:after {
+    content: "\25B2";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center;
+}
+
+
+
+
+
+
+/* Westward tooltips */
+
+.d3-tip.w:after {
+    content: "\25B6";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%;
+}
+
+
+
+
+
+
+/*    text{
+          pointer-events:none;
+        }*/
+
+.details {
+    color: white;
+}
+
+.jvectormap-label {
+    position: absolute;
+    display: none;
+    border: solid 1px #CDCDCD;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #292929;
+    color: white;
+    font-family: sans-serif, Verdana;
+    font-size: smaller;
+    padding: 3px;
+}
+
+.jvectormap-zoomin,
+.jvectormap-zoomout {
+    position: absolute;
+    left: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #292929;
+    padding: 3px;
+    color: white;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    line-height: 10px;
+    text-align: center;
+}
+
+.jvectormap-zoomin {
+    top: 10px;
+}
+
+.jvectormap-zoomout {
+    top: 30px;
+}
+
+
+hr {
+    border-top: 1px solid #007bff;
+    width:70%;
+}
+
+a {color: #000;}
+
+
+.card{
+    background-color: #FFFFFF;
+    padding:0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius:4px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+
+.card:hover{
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+    color:black;
+}
+
+address{
+  margin-bottom: 0px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+}
+
+.card-footer a.btn {
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.2em;
+}
+
+.card p {
+    margin-top: 10px;
+    color: #555;
+    text-align: left;
+}
+
+.card-body {
+    padding: 5px 10px;
+    min-height: 100px;
+}
+
+.card-body h5 {
+    margin: 5px;
+}
+
+#author a{
+  color: #fff;
+  text-decoration: none;
+    
+}
+
+.label-reviews {
+    background-color: #d81b60 !important;
+}
+
+.label-individual {
+    background-color: #555299 !important;
+}
+
+.label-beginner {
+    background-color: #3c8dbc !important;
+}
+
+.label-advanced {
+    background-color: #dd4b39 !important;
+}
+
+.label-region {
+    background-color: #008d4c !important;
+}
+
+.label-ratings {
+    background-color: #30bbbb !important;
+}
+
+.label-price {
+    background-color: #00a7d0 !important;
+}
+
+.label-flavor {
+    background-color: #ff7701 !important;
+}
+
+</style>
+
 <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">

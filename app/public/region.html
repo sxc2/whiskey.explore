@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font awesome CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <!-- Custom CSS  -->
@@ -24,79 +24,216 @@
 
 <body ng-controller="MyCtrl1" class="skin-black-light sidebar-mini {{style.collapsed?'sidebar-collapse':''}}" style="height: auto; min-height: 100%;">
     <div class="wrapper" style="height: auto; min-height: 100%;">
-        <header class="main-header" ng-include src="'partials/components/header.html'"></header>
+        <header class="main-header" ng-include src="'partials/components/header.html?v=4'"></header>
         <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html?v=4'">
         </aside>
         <div class="view-container content-wrapper" style="min-height:1000px;" id="main-container" name="main-container">
             <div ui-view class="view-frame">
                 <section class="content-header">
-                    <h1>By Region</h1>
+                    <h1>Explore How Different Regions of Whiskey Differ in Price, Value and Ratings</h1>
                     <ol class="breadcrumb">
                         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Explore By Region</li>
                     </ol>
                 </section>
                 <section class="content">
-                    <div class="col-lg-12" style="display: none;">
-                        <svg width="1000" height="500"></svg>
-                    </div>
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="box box-warning">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Number of Reviews Per Whiskey Region</h3>
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body no-padding">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class='tableauPlaceholder' id='viz1532673235791' style='position: relative'><noscript><a href='#'><img alt='Reviews per region ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Reviewsperregion&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='w209_final_project_nathan_v10_3&#47;Reviewsperregion' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Reviewsperregion&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1532673235791');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="box box-warning">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">By Region, Individual Expressions - Rating over Price Ratio</h3>
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body no-padding">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class='tableauPlaceholder' id='viz1532673428087' style='position: relative'><noscript><a href='#'><img alt='Rating-Price Ratio ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Y4&#47;Y4RNF73Z5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;Y4RNF73Z5' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Y4&#47;Y4RNF73Z5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1532673428087');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="box box-warning">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Average (Median, Quartile) Reviews Per Whiskey Region</h3>
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body no-padding">
+                        <div class="col-lg-12" id="where-from">
+                            <div class="box box-primary">
+                                <div class="box-body">
                                     <div class="row">
                                         <div class="col-lg-8">
-                                           <div class='tableauPlaceholder' id='viz1532673523138' style='position: relative'><noscript><a href='#'><img alt='Rating distributions per region ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Ratingdistributionsperregion&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='w209_final_project_nathan_v10_3&#47;Ratingdistributionsperregion' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Ratingdistributionsperregion&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1532673523138');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
+                                            <div id="world-map" style="height: 400px; width: 100%;background-color: lightblue;">
+                                            </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <img src="img/image.png" class="img-responsive" alt="User Image">
+                                             <h3 class="box-title">Where Does the World's Whiskey Come From?</h3>
+                                            <div>
+                                                <h3>
+                                                    <span class="label label-beginner">Beginner</span>
+                                                    <!-- <span class="label label-region">Region</span> -->
+                                                    <span class="label label-warning">Aggregated</span>
+                                                </h3>
+                                            </div>
+                                            <br>
+                                            <p>The world's whiskey is produced primarily from a few regions:</p>
+                                            <ul>
+                                                <li>Scotland: Over 120 active distilleries, famous for 'Scotch' whiskey</li>
+                                                <li>United States: World's primary Bourbon producer</li>
+                                                <li>Canada: Interchangeable with 'Rye Whiskey'</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" id="where-best-ratings">
+                            <div class="box box-warning">
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <h3 class="box-title">Which Region gets the Best Ratings? Is most Controversial?</h3>
+                                            <div>
+                                                <h3>
+                                                    <span class="label label-advanced">Advanced</span>
+                                                    <span class="label label-ratings">Ratings</span>
+                                                    <!-- <span class="label label-region">Region</span> -->
+                                                    <span class="label label-warning">Aggregated</span>
+                                                </h3>
+                                            </div>
+                                            <br>
+                                            <p>Ratings are aggregated over each region or type of whiskey. Average, median and quartiles are presented to represent spread of reviews.</p>
+                                            <ul>
+                                                <li>India has the highest average reviews of any region</li>
+                                                <li>Islay scotch seems to have the highest 'controversiality'</li>
+                                                <li>Outliers exists for some expressions even for high rated regions.</li>
+                                            </ul>
+                                            <img src="img/image.png" class="img-responsive" alt="User Image" style="max-width: 400px;">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class='tableauPlaceholder' id='viz1532673523138' style='position: relative'>
+                                                <noscript><a href='#'><img alt='Rating distributions per region ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Ratingdistributionsperregion&#47;1_rss.png' style='border: none' /></a></noscript>
+                                                <object class='tableauViz' style='display:none;'>
+                                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                                    <param name='embed_code_version' value='3' />
+                                                    <param name='site_root' value='' />
+                                                    <param name='name' value='w209_final_project_nathan_v10_3&#47;Ratingdistributionsperregion' />
+                                                    <param name='tabs' value='no' />
+                                                    <param name='toolbar' value='yes' />
+                                                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Ratingdistributionsperregion&#47;1.png' />
+                                                    <param name='animate_transition' value='yes' />
+                                                    <param name='display_static_image' value='yes' />
+                                                    <param name='display_spinner' value='yes' />
+                                                    <param name='display_overlay' value='yes' />
+                                                    <param name='display_count' value='yes' />
+                                                </object>
+                                            </div>
+                                            <script type='text/javascript'>
+                                            var divElement = document.getElementById('viz1532673523138');
+                                            var vizElement = divElement.getElementsByTagName('object')[0];
+                                            vizElement.style.width = '100%';
+                                            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                            var scriptElement = document.createElement('script');
+                                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" id="where-reviews">
+                            <div class="box box-warning">
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class='tableauPlaceholder' id='viz1532673235791' style='position: relative'>
+                                                <noscript><a href='#'><img alt='Reviews per region ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Reviewsperregion&#47;1_rss.png' style='border: none' /></a></noscript>
+                                                <object class='tableauViz' style='display:none;'>
+                                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                                    <param name='embed_code_version' value='3' />
+                                                    <param name='site_root' value='' />
+                                                    <param name='name' value='w209_final_project_nathan_v10_3&#47;Reviewsperregion' />
+                                                    <param name='tabs' value='no' />
+                                                    <param name='toolbar' value='yes' />
+                                                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;w2&#47;w209_final_project_nathan_v10_3&#47;Reviewsperregion&#47;1.png' />
+                                                    <param name='animate_transition' value='yes' />
+                                                    <param name='display_static_image' value='yes' />
+                                                    <param name='display_spinner' value='yes' />
+                                                    <param name='display_overlay' value='yes' />
+                                                    <param name='display_count' value='yes' />
+                                                    <param name='filter' value='publish=yes' />
+                                                </object>
+                                            </div>
+                                            <script type='text/javascript'>
+                                            var divElement = document.getElementById('viz1532673235791');
+                                            var vizElement = divElement.getElementsByTagName('object')[0];
+                                            vizElement.style.width = '100%';
+                                            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                            var scriptElement = document.createElement('script');
+                                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                            </script>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <h3 class="box-title">Which Region gets the Most Reviews?</h3>
+                                            <div>
+                                                <h3>
+                                                    <span class="label label-beginner">Beginner</span>
+                                                    <!-- <span class="label label-region">Region</span> -->
+                                                    <span class="label label-reviews">Reviews</span>
+                                                    <span class="label label-warning">Aggregated</span>
+                                                </h3>
+                                            </div>
+                                            <br>
+                                            <p>Scotch takes the cake by far.<br>
+                                            Broken down by individual scotch regions, we see that Speyside alone gets more reviews last year than Bourbon.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" id="where-value">
+                            <div class="box box-warning">
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <h3 class="box-title">Which Individual Expressions of Each Region has the Best Value? </h3>
+                                            <div>
+                                                <h3>
+                                                    <span class="label label-advanced">Advanced</span>
+                                                    <span class="label label-ratings">Ratings</span>
+                                                    <span class="label label-price">Price</span>
+                                                    <!-- <span class="label label-rating">Region</span> -->
+                                                    <span class="label label-individual">Individual Expressions</span>
+                                                </h3>
+                                            </div>
+                                            <br>
+                                            <p> Grouped by region, we see the relative value of each expression of whiskey in that region given by the area it takes. <br><br>
+                                            The value is calculated by Average Rating / Average Price. Hence, a larger area denotes a better value.</p>
+                                            <p>A few noteworthy expressions:</p>
+                                            <ul>
+                                                <li>Wild Turkey 81 is the best value Bourbon</li>
+                                                <li>Finlaggan Old Reserve is the best value for Islay Scotch</li>
+                                                <li>Te Bheag is the best value blended, and best value overall</li>
+                                                <li>Canadian and Irish has the best general value of all regions</li>
+                                            </ul>
+                                            <br>
+                                            <p class="text-right" style="color:#aaa;">
+                                                <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Hover over the individual areas for details on any particular expression. Click on regions to filter by.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <div class='tableauPlaceholder' id='viz1532673428087' style='position: relative'>
+                                                <noscript><a href='#'><img alt='Rating-Price Ratio ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Y4&#47;Y4RNF73Z5&#47;1_rss.png' style='border: none' /></a></noscript>
+                                                <object class='tableauViz' style='display:none;'>
+                                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                                    <param name='embed_code_version' value='3' />
+                                                    <param name='path' value='shared&#47;Y4RNF73Z5' />
+                                                    <param name='toolbar' value='yes' />
+                                                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Y4&#47;Y4RNF73Z5&#47;1.png' />
+                                                    <param name='animate_transition' value='yes' />
+                                                    <param name='display_static_image' value='yes' />
+                                                    <param name='display_spinner' value='yes' />
+                                                    <param name='display_overlay' value='yes' />
+                                                    <param name='display_count' value='yes' />
+                                                </object>
+                                            </div>
+                                            <script type='text/javascript'>
+                                            var divElement = document.getElementById('viz1532673428087');
+                                            var vizElement = divElement.getElementsByTagName('object')[0];
+                                            vizElement.style.width = '100%';
+                                            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                            var scriptElement = document.createElement('script');
+                                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -114,21 +251,145 @@
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/whiskey.js"></script>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="js/vendor/jquery-jvectormap-world-mill-en.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <!-- <script src="js/boxy.js"></script> -->
     <script>
+    $(document).ready(function() {
+
+        // jvectormap data
+        var visitorsData = {
+            US: 235, // USA
+            CA: 140, // Canada
+            FR: 1, // France
+            AU: 1, // Australia
+            IN: 36, // India
+            JP: 69, // Japan
+            IE: 79, // IRELAND
+            SE: 64, // sweden
+            ZA: 3, // south africa
+            TW: 16,
+            GB: 791 // Great Britain
+        };
+        // World map by jvectormap
+        $('#world-map').vectorMap({
+            map: 'world_mill_en',
+            backgroundColor: 'transparent',
+            regionStyle: {
+                initial: {
+                    fill: '#e4e4e4',
+                    'fill-opacity': 1,
+                    stroke: 'none',
+                    'stroke-width': 0,
+                    'stroke-opacity': 1
+                }
+            },
+            series: {
+                regions: [{
+                    values: visitorsData,
+                    scale: ['#E4E4E4', '#dd4b39'],
+                    normalizeFunction: 'polynomial'
+                }]
+            },
+            onRegionLabelShow: function(e, el, code) {
+                if (typeof visitorsData[code] != 'undefined')
+                    el.html(el.html() + ': <br>' + visitorsData[code] + ' whiskeys produced');
+            }
+        });
+    });
+
+
+    var format = d3.format(",");
+
+    var margin = { top: 0, right: 0, bottom: 0, left: 0 },
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    var path = d3.geoPath();
+
+    var svg = d3.select(".svg-draw")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append('g')
+        .attr('class', 'map');
+
+    var projection = d3.geoMercator()
+        .scale(130)
+        .translate([width / 2, height / 1.5]);
+
+    var path = d3.geoPath().projection(projection);
+
+    queue()
+        .defer(d3.json, "https://s3-us-west-2.amazonaws.com/whisky.explore/files/world_countries.json")
+        .defer(d3.csv, "https://s3-us-west-2.amazonaws.com/whisky.explore/files/whiskey-lat-long.csv")
+        .await(ready);
+
+    function ready(error, data, places) {
+        var populationById = {};
+
+        // population.forEach(function(d) { populationById[d.id] = +d.population; });
+        data.features.forEach(function(d) { d.population = 10 });
+
+        svg.append("g")
+            .attr("class", "countries")
+            .selectAll("path")
+            .data(data.features)
+            .enter().append("path")
+            .attr("d", path)
+            .style("fill", function(d) { return "lightblue"; })
+            .style('stroke', 'white')
+            .style('stroke-width', 1.5)
+            .style("opacity", 0.8)
+            // tooltips
+            .style("stroke", "white")
+            .style('stroke-width', 0.3)
+            .on('mouseover', function(d) {
+                // tip.show(d);
+
+                d3.select(this)
+                    .style("opacity", 1)
+                    .style("stroke", "white")
+                    .style("stroke-width", 3);
+            })
+            .on('mouseout', function(d) {
+                // tip.hide(d);
+
+                d3.select(this)
+                    .style("opacity", 0.8)
+                    .style("stroke", "white")
+                    .style("stroke-width", 0.3);
+            });
+
+        svg.selectAll(".pin")
+            .data(places)
+            .enter().append("circle", ".pin")
+            .attr("r", 5)
+            .attr("transform", function(d) {
+                return "translate(" + projection([
+                    360 - d.longW,
+                    d.latN
+                ]) + ")";
+            });
+
+    }
     var whiskey_data = [];
 
     // this was borrowed from https://bl.ocks.org/mbostock/3885304 
     // (i like his margin calculations and scaling setup)
-    var svg = d3.select("svg");
-    var margin = { top: 40, right: 20, bottom: 20, left: 20 };
-    var width = +svg.attr("width") - margin.left - margin.right - 20;
-    var height = +svg.attr("height") - margin.top - margin.bottom - 20;
+    // var svg = d3.select("svg");
+    // var margin = { top: 40, right: 20, bottom: 20, left: 20 };
+    // var width = +svg.attr("width") - margin.left - margin.right - 20;
+    // var height = +svg.attr("height") - margin.top - margin.bottom - 20;
 
-    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
-    var y = d3.scaleLinear().rangeRound([height, 0]);
+    // var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+    // var y = d3.scaleLinear().rangeRound([height, 0]);
 
     // d3.csv("https://s3-us-west-2.amazonaws.com/whisky.explore/files/whiskey_data.json", function(data) {
     //     whiskey_data = data;

@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font awesome CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <!-- Custom CSS  -->
@@ -30,7 +30,7 @@
         <div class="view-container content-wrapper" style="min-height:1000px;" id="main-container" name="main-container">
             <div ui-view class="view-frame">
                 <section class="content-header">
-                    <h1>By Price</h1>
+                    <h1>Explore How Price Affects Whiskeys</h1>
                     <ol class="breadcrumb">
                         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Explore By Price</li>
@@ -41,57 +41,35 @@
                         <svg width="1000" height="500"></svg>
                     </div>
                     <div class="row">
-<!--                         <div class="col-lg-5">
-                            <div class="box box-warning">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Whiskey Value (Price over Rating)</h3>
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body no-padding">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                           <div class='tableauPlaceholder' id='viz1532673310361' style='position: relative'><noscript><a href='#'><img alt='Price and Rating ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;QN&#47;QN5XB9RDR&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;QN5XB9RDR' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;QN&#47;QN5XB9RDR&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1532673310361');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="col-lg-5">
-                            <div class="box box-blue">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">By Region, Individual Expressions - Rating over Price Ratio</h3>
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body no-padding">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class='tableauPlaceholder' id='viz1532574323428' style='position: relative'><noscript><a href='#'><img alt='Rating-Price Ratio ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;7K&#47;7KR5PKRJ2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;7KR5PKRJ2' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;7K&#47;7KR5PKRJ2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1532574323428');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
+                        <div class="col-lg-12">
                             <div class="box box-warning" style="min-height: 600px;">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Whiskey Price and Rating</h3>
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body no-padding">
+                                <div class="box-body">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-4">
+                                            <h3 class="box-title">Find a highly rated whiskey within your price range. </h3>
+                                            <div>
+                                                <h3>
+                                                    <span class="label label-advanced">Advanced</span>
+                                                    <span class="label label-ratings">Ratings</span>
+                                                    <span class="label label-price">Price</span>
+                                                    <span class="label label-rating">Region</span>
+                                                    <span class="label label-individual">Individual Expressions</span>
+                                                </h3>
+                                            </div>
+                                            <br>
+                                            
+                                            <p>A few noteworthy expressions:</p>
+                                            <ul>
+                                                <li>Best Bourbon (George T Stagg 2012) is under $100</li>
+                                                <li>Glenfarclas 40 leads the Scotch at average rating of 95 points</li>
+                                                <li>Cheaper doesn't always mean worse, but generally does.</li>
+                                            </ul>
+                                            <br>
+                                            <p class="text-right" style="color:#aaa;">
+                                                <i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Hover over the individual areas for details on any particular expression. Click on regions to filter by.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-8">
                                             <div class='tableauPlaceholder' id='viz1532574157858' style='position: relative'><noscript><a href='#'><img alt='Price and Rating ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;KD&#47;KDH2RS4BH&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;KDH2RS4BH' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;KD&#47;KDH2RS4BH&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1532574157858');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                                         </div>
                                     </div>
@@ -105,6 +83,7 @@
         </div>
     </div>
 
+    <script src="js/vendor/jquery.min.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
     <script src="js/app.js"></script>
@@ -112,9 +91,10 @@
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-    <!-- <script src="js/boxy.js"></script> -->
+    <script src="js/whiskey.js"></script>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
     <script>
     var whiskey_data = [];
 
