@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font awesome CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
     <!-- Custom CSS  -->
@@ -32,75 +32,151 @@
                 <section class="content">
                     <div class="row">
                         <section class="col-lg-12 connectedSortable ui-sortable">
-                            <div class="jumbotron" style="background-color: white;padding: 24px 48px;">
+                            <div class="jumbotron" style="background-color: white;padding: 20px 40px;">
                                 <div class="container">
                                     <div class="col-lg-9">
-                                        <h1 style="font-size: 40pt;"> Welcome to Whiskey Explorer!</h1>
-                                        <br>
-                                        <p>Our goal is to help whiskey connoisseurs to explore whiskeys from the perspective of different data attributes and share interesting facts over neat scotch at a bar.
+                                        <h1 style="font-size: 30pt;"> Welcome to Whiskey Explorer!</h1>
+                                        <p style="font-size: 14pt;">
+                                            <br>Our goal is to help whiskey connoisseurs to explore whiskeys from the perspective of different data attributes and share interesting facts over neat scotch at a bar.
                                             <br>
                                             <br> We also want to help whiskey beginners get acquainted with the different whiskeys the world has to offer - an expression that's a particularly good value, prefered flavor notes, etc.</p>
+                                        <p style="font-size: 12pt;color:#555;">Navigate our visualizations by the dimensions you care about. Each dimension is color coded with <span class="label label-default">a label</span>.</p>
                                     </div>
                                     <div class="col-lg-3">
-                                        <img src="http://wineenthusiast.scene7.com/is/image/WineEnthusiast/f/n/w/465/26153_1.jpg" class="img-responsive" alt="User Image">
-                                        <br>
+                                        <div style="padding:0 30px;">
+                                            <img src="http://wineenthusiast.scene7.com/is/image/WineEnthusiast/f/n/w/465/26153_1.jpg" class="img-responsive" alt="User Image">
+                                        </div>
                                         <h4 style="text-transform: uppercase;color:#aaa;" class="text-center">CHEERS!</h4>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <section class="col-lg-12 connectedSortable ui-sortable">
-                            <div class="box box-widget">
-                                <div class="box-body">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <h4 style="text-transform: uppercase;color:#aaa;">Region, Popularity</h4>
-                                            <img src="" class="img-responsive"/>
+                            <div class="row">
+                                <div class="col-md-3 mt-5">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="img/where1.png" alt="Card image cap">
+                                        <div class="card-body" id="card">
+                                            <!-- <h5 class="card-title">Region, Popularity</h5> -->
+                                            <span class="label label-beginner">Beginner</span>
+                                            <span class="label label-region">Region</span>
+                                            <span class="label label-warning">Aggregated</span>
                                             <p> Where Does the World's Whiskey Come From?</p>
+                                        </div>
+                                        <div class="card-footer text-muted">
                                             <a class="btn btn-default" href="/region.html?v=4">See More</a>
                                         </div>
-                                        <div class="col-lg-3">
-                                            <h4 style="text-transform: uppercase;color:#aaa;">Region and Value, Individual Expressions</h4>
-                                            <img src="" class="img-responsive"/>
-                                            <p>Which Individual Expressions of Each Region has the Best Value? </p>
-                                            <a class="btn btn-default" href="/region.html#where-value?v=4">See More</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mt-5">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="img/where4.png" alt="Card image cap">
+                                        <div class="card-body" id="card">
+                                            <!-- <h5 class="card-title">Region and Value, Individual Expressions</h5> -->
+                                            <span class="label label-advanced">Advanced</span>
+                                            <span class="label label-ratings">Ratings</span>
+                                            <span class="label label-price">Price</span>
+                                            <span class="label label-region">Region</span>
+                                            <span class="label label-individual">Expressions</span>
+                                            <p>Which Individual Expressions of Each Region has the Best Value?</p>
                                         </div>
-                                        <div class="col-lg-3">
-                                            <h4 style="text-transform: uppercase;color:#aaa;">Region and Price, Individual Expressions</h4>
-                                            <img src="" class="img-responsive"/>
-                                            <p>Find a highly rated whiskey within your price range.</p>
-                                            <a class="btn btn-default" href="/price.html?v=4">See More</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <h4 style="text-transform: uppercase;color:#aaa;">Region and Ratings, Aggregated by Region</h4>
-                                            <img src="" class="img-responsive"/>
-                                            <p>Which Region gets the Best Ratings? Is most Controversial?</p>
-                                            <a class="btn btn-default" href="/region.html#where-best-ratings?v=4">See More</a>
+                                        <div class="card-footer text-muted">
+                                            <a class="btn btn-default" href="/region.html?id=where-value&v=4" target="_self">See More</a>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <h4 style="text-transform: uppercase;color:#aaa;">Region and Ratings, Popularity</h4>
-                                            <img src="" class="img-responsive"/>
-                                            <p>Which Region gets the Most Reviews?</p>
-                                            <a class="btn btn-default" href="/region.html#where-reviews?v=4">See More</a>
+                                </div>
+                                <div class="col-md-3 mt-5">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="img/where3.png" alt="Card image cap">
+                                        <div class="card-body" id="card">
+                                            <!-- <h5 class="card-title">Region and Price, Individual Expressions</h5> -->
+                                            <span class="label label-advanced">Advanced</span>
+                                            <span class="label label-ratings">Ratings</span>
+                                            <span class="label label-price">Price</span>
+                                            <span class="label label-region">Region</span>
+                                            <span class="label label-individual">Expressions</span>
+                                            <p>Find a highly rated whiskey within your price range.</p>
                                         </div>
-                                        <div class="col-lg-3">
-                                            <h4 style="text-transform: uppercase;color:#aaa;">Region and Flavor, Aggregated by Region</h4>
-                                            <img src="" class="img-responsive"/>
+                                        <div class="card-footer text-muted">
+                                            <a class="btn btn-default" href="/price.html?v=4">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mt-5">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="img/where2.png" alt="Card image cap">
+                                        <div class="card-body" id="card">
+                                            <!-- <h5 class="card-title">Region and Ratings, Aggregated</h5> -->
+                                            <span class="label label-advanced">Advanced</span>
+                                            <span class="label label-ratings">Ratings</span>
+                                            <span class="label label-region">Region</span>
+                                            <span class="label label-warning">Aggregated</span>
+                                            <p>Which Region gets the Best Ratings? Is most Controversial?</p>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                            <a class="btn btn-default" href="/region.html?id=where-best-ratings&v=4">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mt-5">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="img/where5.png" alt="Card image cap">
+                                        <div class="card-body" id="card">
+                                            <!-- <h5 class="card-title">Region and Ratings, Popularity</h5> -->
+                                            <span class="label label-beginner">Beginner</span>
+                                            <span class="label label-region">Region</span>
+                                            <span class="label label-reviews">Reviews</span>
+                                            <span class="label label-warning">Aggregated</span>
+                                            <p>Which Region gets the Most Reviews?</p>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                            <a class="btn btn-default" href="/region.html?id=where-reviews&v=4">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mt-5">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="img/where6.png" alt="Card image cap">
+                                        <div class="card-body" id="card">
+                                            <!-- <h5 class="card-title">Region and Flavor, Aggregated by Region</h5> -->
+                                            <span class="label label-advanced">Advanced</span>
+                                            <span class="label label-flavor">Flavors</span>
+                                            <span class="label label-region">Region</span>
+                                            <span class="label label-warning">Aggregated</span>
                                             <p>Top Whiskey Flavor Notes by Region</p>
+                                        </div>
+                                        <div class="card-footer text-muted">
                                             <a class="btn btn-default" href="/flavor.html?v=4">See More</a>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <h4 style="text-transform: uppercase;color:#aaa;">Flavor Deep Dive</h4>
-                                            <img src="" class="img-responsive"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-5">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="img/where7.png" alt="Card image cap" style="max-width: 300px;">
+                                        <div class="card-body" id="card">
+                                            <!-- <h5 class="card-title">Flavor Deep Dive</h5> -->
+                                            <span class="label label-advanced">Advanced</span>
+                                            <span class="label label-region">Region</span>
+                                            <span class="label label-flavor">Flavors</span>
+                                            <span class="label label-ratings">Ratings</span>
+                                            <span class="label label-price">Price</span>
+                                            <span class="label label-individual">Individual Expressions</span>
+                                            <span class="label label-warning">Aggregated</span>
                                             <p>Dynamic serial spider visualization shows the flavor profiles of more than 400 different expressions of whiskey by flavor notes.</p>
+                                        </div>
+                                        <div class="card-footer text-muted">
                                             <a class="btn btn-default" href="/finding2.html?v=4">See More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                           
                         </section>
                     </div>
                 </section>
@@ -108,116 +184,117 @@
         </div>
     </div>
     <style>
-        .names {
-            fill: none;
-            stroke: #fff;
-            stroke-linejoin: round;
-        }
-        /* Tooltip CSS */
+    .names {
+        fill: none;
+        stroke: #fff;
+        stroke-linejoin: round;
+    }
+    /* Tooltip CSS */
 
-        .d3-tip {
-            line-height: 1.5;
-            font-weight: 400;
-            font-family: "avenir next", Arial, sans-serif;
-            padding: 6px;
-            background: rgba(0, 0, 0, 0.6);
-            color: #FFA500;
-            border-radius: 1px;
-            pointer-events: none;
-        }
-        /* Creates a small triangle extender for the tooltip */
+    .d3-tip {
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: "avenir next", Arial, sans-serif;
+        padding: 6px;
+        background: rgba(0, 0, 0, 0.6);
+        color: #FFA500;
+        border-radius: 1px;
+        pointer-events: none;
+    }
+    /* Creates a small triangle extender for the tooltip */
 
-        .d3-tip:after {
-            box-sizing: border-box;
-            display: inline;
-            font-size: 8px;
-            width: 100%;
-            line-height: 1.5;
-            color: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            pointer-events: none;
-        }
-        /* Northward tooltips */
+    .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 8px;
+        width: 100%;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        pointer-events: none;
+    }
+    /* Northward tooltips */
 
-        .d3-tip.n:after {
-            content: "\25BC";
-            margin: -1px 0 0 0;
-            top: 100%;
-            left: 0;
-            text-align: center;
-        }
-        /* Eastward tooltips */
+    .d3-tip.n:after {
+        content: "\25BC";
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+        text-align: center;
+    }
+    /* Eastward tooltips */
 
-        .d3-tip.e:after {
-            content: "\25C0";
-            margin: -4px 0 0 0;
-            top: 50%;
-            left: -8px;
-        }
-        /* Southward tooltips */
+    .d3-tip.e:after {
+        content: "\25C0";
+        margin: -4px 0 0 0;
+        top: 50%;
+        left: -8px;
+    }
+    /* Southward tooltips */
 
-        .d3-tip.s:after {
-            content: "\25B2";
-            margin: 0 0 1px 0;
-            top: -8px;
-            left: 0;
-            text-align: center;
-        }
-        /* Westward tooltips */
+    .d3-tip.s:after {
+        content: "\25B2";
+        margin: 0 0 1px 0;
+        top: -8px;
+        left: 0;
+        text-align: center;
+    }
+    /* Westward tooltips */
 
-        .d3-tip.w:after {
-            content: "\25B6";
-            margin: -4px 0 0 -1px;
-            top: 50%;
-            left: 100%;
-        }
-        /*    text{
+    .d3-tip.w:after {
+        content: "\25B6";
+        margin: -4px 0 0 -1px;
+        top: 50%;
+        left: 100%;
+    }
+    /*    text{
           pointer-events:none;
         }*/
 
-        .details {
-            color: white;
-        }
+    .details {
+        color: white;
+    }
 
-        .jvectormap-label {
-            position: absolute;
-            display: none;
-            border: solid 1px #CDCDCD;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            background: #292929;
-            color: white;
-            font-family: sans-serif, Verdana;
-            font-size: smaller;
-            padding: 3px;
-        }
+    .jvectormap-label {
+        position: absolute;
+        display: none;
+        border: solid 1px #CDCDCD;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background: #292929;
+        color: white;
+        font-family: sans-serif, Verdana;
+        font-size: smaller;
+        padding: 3px;
+    }
 
-        .jvectormap-zoomin,
-        .jvectormap-zoomout {
-            position: absolute;
-            left: 10px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            background: #292929;
-            padding: 3px;
-            color: white;
-            width: 10px;
-            height: 10px;
-            cursor: pointer;
-            line-height: 10px;
-            text-align: center;
-        }
+    .jvectormap-zoomin,
+    .jvectormap-zoomout {
+        position: absolute;
+        left: 10px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background: #292929;
+        padding: 3px;
+        color: white;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+        line-height: 10px;
+        text-align: center;
+    }
 
-        .jvectormap-zoomin {
-            top: 10px;
-        }
+    .jvectormap-zoomin {
+        top: 10px;
+    }
 
-        .jvectormap-zoomout {
-            top: 30px;
-        }
+    .jvectormap-zoomout {
+        top: 30px;
+    }
     </style>
+    <script src="js/vendor/jquery.min.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
     <script src="js/app.js"></script>
@@ -225,10 +302,10 @@
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/whiskey.js"></script>
     <script src="http://d3js.org/d3.v4.min.js"></script>
     <script src="http://d3js.org/queue.v1.min.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
-    <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="js/vendor/jquery-jvectormap-world-mill-en.js"></script>
     <script>
@@ -348,7 +425,7 @@
                     d.latN
                 ]) + ")";
             });
-       
+
     }
     // var whiskey_data = [];
 

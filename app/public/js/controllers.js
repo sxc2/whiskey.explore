@@ -8,4 +8,7 @@ app.controller('MyCtrl1', function($scope, $location) {
     	current: $location.absUrl()
     }
 
+    $scope.scrollTo = function (hash) {
+        $location.hash(hash);
+    };
 });

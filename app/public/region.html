@@ -24,7 +24,7 @@
 
 <body ng-controller="MyCtrl1" class="skin-black-light sidebar-mini {{style.collapsed?'sidebar-collapse':''}}" style="height: auto; min-height: 100%;">
     <div class="wrapper" style="height: auto; min-height: 100%;">
-        <header class="main-header" ng-include src="'partials/components/header.html'"></header>
+        <header class="main-header" ng-include src="'partials/components/header.html?v=4'"></header>
         <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html?v=4'">
         </aside>
         <div class="view-container content-wrapper" style="min-height:1000px;" id="main-container" name="main-container">
@@ -49,7 +49,8 @@
                                         <div class="col-lg-4">
                                              <h3 class="box-title">Where Does the World's Whiskey Come From?</h3>
                                             <div>
-                                                <h3><span class="label label-beginner">Beginner</span>
+                                                <h3>
+                                                    <span class="label label-beginner">Beginner</span>
                                                     <!-- <span class="label label-region">Region</span> -->
                                                     <span class="label label-warning">Aggregated</span>
                                                 </h3>
@@ -83,7 +84,12 @@
                                                 </h3>
                                             </div>
                                             <br>
-                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aut, laborum? Cupiditate error blanditiis sapiente unde eum saepe possimus porro sunt officiis. Ullam enim tempore cum rerum dolores, voluptatum consectetur!</p>
+                                            <p>Ratings are aggregated over each region or type of whiskey. Average, median and quartiles are presented to represent spread of reviews.</p>
+                                            <ul>
+                                                <li>India has the highest average reviews of any region</li>
+                                                <li>Islay scotch seems to have the highest 'controversiality'</li>
+                                                <li>Outliers exists for some expressions even for high rated regions.</li>
+                                            </ul>
                                             <img src="img/image.png" class="img-responsive" alt="User Image" style="max-width: 400px;">
                                         </div>
                                         <div class="col-lg-8">
@@ -156,7 +162,8 @@
                                         <div class="col-lg-4">
                                             <h3 class="box-title">Which Region gets the Most Reviews?</h3>
                                             <div>
-                                                <h3><span class="label label-beginner">Beginner</span>
+                                                <h3>
+                                                    <span class="label label-beginner">Beginner</span>
                                                     <!-- <span class="label label-region">Region</span> -->
                                                     <span class="label label-reviews">Reviews</span>
                                                     <span class="label label-warning">Aggregated</span>
@@ -244,10 +251,11 @@
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/whiskey.js"></script>
     <script src="http://d3js.org/d3.v4.min.js"></script>
     <script src="http://d3js.org/queue.v1.min.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
-    <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="js/vendor/jquery-jvectormap-world-mill-en.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
@@ -375,13 +383,13 @@
 
     // this was borrowed from https://bl.ocks.org/mbostock/3885304 
     // (i like his margin calculations and scaling setup)
-    var svg = d3.select("svg");
-    var margin = { top: 40, right: 20, bottom: 20, left: 20 };
-    var width = +svg.attr("width") - margin.left - margin.right - 20;
-    var height = +svg.attr("height") - margin.top - margin.bottom - 20;
+    // var svg = d3.select("svg");
+    // var margin = { top: 40, right: 20, bottom: 20, left: 20 };
+    // var width = +svg.attr("width") - margin.left - margin.right - 20;
+    // var height = +svg.attr("height") - margin.top - margin.bottom - 20;
 
-    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
-    var y = d3.scaleLinear().rangeRound([height, 0]);
+    // var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+    // var y = d3.scaleLinear().rangeRound([height, 0]);
 
     // d3.csv("https://s3-us-west-2.amazonaws.com/whisky.explore/files/whiskey_data.json", function(data) {
     //     whiskey_data = data;
