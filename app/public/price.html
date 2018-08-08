@@ -24,8 +24,8 @@
 
 <body ng-controller="MyCtrl1" class="skin-black-light sidebar-mini {{style.collapsed?'sidebar-collapse':''}}" style="height: auto; min-height: 100%;">
     <div class="wrapper" style="height: auto; min-height: 100%;">
-        <header class="main-header" ng-include src="'partials/components/header.html'"></header>
-        <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html?v=4'">
+        <header class="main-header" ng-include src="'partials/components/header.html?v=2'"></header>
+        <aside class="main-sidebar" ng-include src="'partials/components/sidebar.html?v=5'">
         </aside>
         <div class="view-container content-wrapper" style="min-height:1000px;" id="main-container" name="main-container">
             <div ui-view class="view-frame">
@@ -52,7 +52,7 @@
                                                     <span class="label label-advanced">Advanced</span>
                                                     <span class="label label-ratings">Ratings</span>
                                                     <span class="label label-price">Price</span>
-                                                    <span class="label label-rating">Region</span>
+                                                    <span class="label label-region">Region</span>
                                                     <span class="label label-individual">Individual Expressions</span>
                                                 </h3>
                                             </div>
