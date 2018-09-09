@@ -1,7 +1,7 @@
 # whiskey.explore
 
 hosted:
-http://whisky.explore.s3-website-us-west-2.amazonaws.com/price.html
+http://whisky.explore.s3-website-us-west-2.amazonaws.com/
 
 
 to run:
